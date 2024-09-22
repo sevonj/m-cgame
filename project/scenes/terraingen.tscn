@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjf7t6sa52d4x"]
+
+[ext_resource type="Script" path="res://testrraingen.gd" id="1_hexiq"]
+[ext_resource type="Script" path="res://classes/entities/camerarig_2d_overview.gd" id="2_s6umv"]
+
+[sub_resource type="Gradient" id="Gradient_5nspb"]
+colors = PackedColorArray(0.2464, 0.507733, 0.56, 1, 0.0204, 0.286733, 0.34, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8j0fj"]
+gradient = SubResource("Gradient_5nspb")
+width = 4096
+height = 2048
+fill_to = Vector2(0, 1)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_hexiq")
+
+[node name="world" type="Node2D" parent="."]
+
+[node name="bg" type="Sprite2D" parent="world"]
+visible = false
+position = Vector2(0, -512)
+texture = SubResource("GradientTexture2D_8j0fj")
+
+[node name="entities" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="entities"]
+position = Vector2(0, -650)
+script = ExtResource("2_s6umv")

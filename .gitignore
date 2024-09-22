@@ -1,0 +1,10 @@
+# Build
+*.so
+*.os
+*.dll
+build/
+.sconsign.dblite
+
+# IDE
+.vscode/
+.idea/
